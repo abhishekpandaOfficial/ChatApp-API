@@ -38,6 +38,42 @@ namespace ChatApp.Api.Controllers
             await _chatAppDbContext.SaveChangesAsync();
             return Ok(employeeRequest);
         }
+
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetEmployee([FromRoute]Guid id)
+        {
+           var employee= await _chatAppDbContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            if(employee == null)
+            {
+                return NotFound();
+            }
+            return Ok(employee);
+
+
+        }
+
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateEmployee([FromRoute]Guid id, Employee updateEmployee)
+        {
+           var employee = await _chatAppDbContext.Employees.FindAsync(id);
+
+            if(employee == null)
+            {
+                return NotFound();
+            }
+            employee.Name = updateEmployee.Name;
+            employee.Email = updateEmployee.Email;
+            employee.Salary = updateEmployee.Salary;
+            employee.Phone = updateEmployee.Phone;
+            employee.Department = updateEmployee.Department;
+
+            await _chatAppDbContext.SaveChangesAsync();
+            return Ok(employee);
+        }
+
+
     }
 }
 
