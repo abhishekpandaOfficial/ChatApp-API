@@ -17,6 +17,8 @@ namespace ChatApp.Api.Models
         public long Salary { get; set; }
         [Required]
         public string? Department { get; set; }
+
+        public string? isActive { get; set; }
     }
 }
 

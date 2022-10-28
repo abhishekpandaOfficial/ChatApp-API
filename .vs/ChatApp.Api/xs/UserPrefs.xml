@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="ChatApp.Api/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChatApp.Api/Controllers/ChatController.cs">
     <Files>
-      <File FileName="ChatApp.Api/Controllers/ChatController.cs" Line="20" Column="32" />
-      <File FileName="ChatApp.Api/Program.cs" Line="22" Column="22" />
+      <File FileName="ChatApp.Api/Controllers/ChatController.cs" Line="80" Column="1" />
+      <File FileName="ChatApp.Api/Program.cs" Line="20" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,8 +13,6 @@
           <Node name="ChatApp.Api" expanded="True">
             <Node name="ChatApp.Api" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>

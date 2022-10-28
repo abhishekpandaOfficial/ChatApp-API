@@ -26,6 +26,17 @@ namespace ChatApp.Api.Controllers
         public async Task<IActionResult> GetAllEmployees()
         {
           var employeeLists =  await _chatAppDbContext.Employees.ToListAsync();
+            foreach(var activeEmployee in employeeLists)
+            {
+                if(activeEmployee.isActive == true)
+                {
+                    return Ok(employeeLists);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
             return Ok(employeeLists);
         }
 
@@ -34,6 +45,7 @@ namespace ChatApp.Api.Controllers
         public async Task<IActionResult> AddEmployee([FromBody] Employee employeeRequest)
         {
             employeeRequest.Id = Guid.NewGuid();
+            employeeRequest.isActive = true;
             await _chatAppDbContext.Employees.AddAsync(employeeRequest);
             await _chatAppDbContext.SaveChangesAsync();
             return Ok(employeeRequest);
@@ -43,7 +55,7 @@ namespace ChatApp.Api.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetEmployee([FromRoute]Guid id)
         {
-           var employee= await _chatAppDbContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+           var employee= await _chatAppDbContext.Employees.FirstOrDefaultAsync(x => x.Id == id && x.isActive == true);
             if(employee == null)
             {
                 return NotFound();
@@ -58,6 +70,7 @@ namespace ChatApp.Api.Controllers
         public async Task<IActionResult> UpdateEmployee([FromRoute]Guid id, Employee updateEmployee)
         {
            var employee = await _chatAppDbContext.Employees.FindAsync(id);
+           // var activeCheck = await _chatAppDbContext.Employees.FindAsync(employee?.isActive);
 
             if(employee == null)
             {
@@ -73,7 +86,19 @@ namespace ChatApp.Api.Controllers
             return Ok(employee);
         }
 
-
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> DeleteEmployee([FromRoute] Guid id)
+        {
+            var employee = await _chatAppDbContext.Employees.FindAsync(id);
+            if(employee == null || employee.isActive == false)
+            {
+                return NotFound();
+            }
+            employee.isActive = false;
+            await _chatAppDbContext.SaveChangesAsync();
+            return Ok(employee);
+        }
     }
 }
 
