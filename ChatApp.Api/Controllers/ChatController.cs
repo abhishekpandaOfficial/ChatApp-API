@@ -35,7 +35,7 @@ namespace ChatApp.Api.Controllers
         public async Task<IActionResult> AddEmployee([FromBody] Employee employeeRequest)
         {
             employeeRequest.Id = Guid.NewGuid();
-           // employeeRequest.isActive = "true";
+            employeeRequest.isActive = "true";
             await _chatAppDbContext.Employees.AddAsync(employeeRequest);
             await _chatAppDbContext.SaveChangesAsync();
             return Ok(employeeRequest);
@@ -85,7 +85,7 @@ namespace ChatApp.Api.Controllers
             {
                 return NotFound();
             }
-            //employee.isActive = "false";
+            employee.isActive = "false";
              _chatAppDbContext.Remove(employee);
             await _chatAppDbContext.SaveChangesAsync();
             return Ok(employee);

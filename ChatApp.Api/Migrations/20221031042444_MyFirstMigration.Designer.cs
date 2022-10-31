@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChatApp.Api.Migrations
 {
     [DbContext(typeof(ChatAppDbContext))]
-    [Migration("20221028070155_MigrationSqlInitial")]
-    partial class MigrationSqlInitial
+    [Migration("20221031042444_MyFirstMigration")]
+    partial class MyFirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

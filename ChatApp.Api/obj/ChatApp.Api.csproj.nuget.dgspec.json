@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/abhishekpanda/Desktop/Project/ChatApp-API/ChatApp.Api/ChatApp.Api/ChatApp.Api.csproj": {}
+    "E:\\Projects\\ChatApp.Api\\ChatApp.Api.csproj": {}
   },
   "projects": {
-    "/Users/abhishekpanda/Desktop/Project/ChatApp-API/ChatApp.Api/ChatApp.Api/ChatApp.Api.csproj": {
+    "E:\\Projects\\ChatApp.Api\\ChatApp.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abhishekpanda/Desktop/Project/ChatApp-API/ChatApp.Api/ChatApp.Api/ChatApp.Api.csproj",
+        "projectUniqueName": "E:\\Projects\\ChatApp.Api\\ChatApp.Api.csproj",
         "projectName": "ChatApp.Api",
-        "projectPath": "/Users/abhishekpanda/Desktop/Project/ChatApp-API/ChatApp.Api/ChatApp.Api/ChatApp.Api.csproj",
-        "packagesPath": "/Users/abhishekpanda/.nuget/packages/",
-        "outputPath": "/Users/abhishekpanda/Desktop/Project/ChatApp-API/ChatApp.Api/ChatApp.Api/obj/",
+        "projectPath": "E:\\Projects\\ChatApp.Api\\ChatApp.Api.csproj",
+        "packagesPath": "C:\\Users\\MURALI\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\ChatApp.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/abhishekpanda/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\MURALI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,8 +65,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -76,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

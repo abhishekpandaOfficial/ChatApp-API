@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ChatApp.Api.Migrations
 {
-    public partial class MigrationSqlInitial : Migration
+    public partial class MyFirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
