@@ -12,6 +12,8 @@ namespace ChatApp.Api.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<RegisterUser> RegisteredUsers { get; set; }
+        public DbSet<User> user { get; set; }
 
     }
 }

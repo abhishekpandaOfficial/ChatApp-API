@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ChatApp.Api.Data;
 using ChatApp.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ namespace ChatApp.Api.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ChatController : Controller
     {
         private readonly ChatAppDbContext _chatAppDbContext;
@@ -22,7 +24,7 @@ namespace ChatApp.Api.Controllers
             _chatAppDbContext = chatAppDbContext;
         }
 
-        [HttpGet]
+        [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
           var employeeLists =  await _chatAppDbContext.Employees.ToListAsync();
@@ -31,7 +33,7 @@ namespace ChatApp.Api.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost("AddEmployee")]
         public async Task<IActionResult> AddEmployee([FromBody] Employee employeeRequest)
         {
             employeeRequest.Id = Guid.NewGuid();
@@ -41,8 +43,7 @@ namespace ChatApp.Api.Controllers
             return Ok(employeeRequest);
         }
 
-        [HttpGet]
-        [Route("{id:Guid}")]
+        [HttpGet("GetEmployeeById/{id:Guid}")]
         public async Task<IActionResult> GetEmployee([FromRoute]Guid id)
         {
            var employee= await _chatAppDbContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
@@ -55,8 +56,7 @@ namespace ChatApp.Api.Controllers
 
         }
 
-        [HttpPut]
-        [Route("{id:Guid}")]
+        [HttpPut("UpdateEmployee/{id:Guid}")]
         public async Task<IActionResult> UpdateEmployee([FromRoute]Guid id, Employee updateEmployee)
         {
            var employee = await _chatAppDbContext.Employees.FindAsync(id);
@@ -76,8 +76,7 @@ namespace ChatApp.Api.Controllers
             return Ok(employee);
         }
 
-        [HttpDelete]
-        [Route("{id:Guid}")]
+        [HttpDelete("DeleteEmployee/{id:Guid}")]
         public async Task<IActionResult> DeleteEmployee([FromRoute] Guid id)
         {
             var employee = await _chatAppDbContext.Employees.FindAsync(id);

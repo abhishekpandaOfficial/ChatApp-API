@@ -272,6 +272,7 @@ E:\Projects\ChatApp.Api\bin\Debug\net6.0\ChatApp.Api.pdb
 E:\Projects\ChatApp.Api\bin\Debug\net6.0\Humanizer.dll
 E:\Projects\ChatApp.Api\bin\Debug\net6.0\MessagePack.dll
 E:\Projects\ChatApp.Api\bin\Debug\net6.0\MessagePack.Annotations.dll
+E:\Projects\ChatApp.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\Projects\ChatApp.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\Projects\ChatApp.Api\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Projects\ChatApp.Api\bin\Debug\net6.0\Microsoft.Build.dll
